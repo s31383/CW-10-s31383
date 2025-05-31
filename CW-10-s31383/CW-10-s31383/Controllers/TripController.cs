@@ -16,7 +16,7 @@ public class TripController(IDbService service) : ControllerBase
         }
         catch (Exception exception)
         {
-            return StatusCode(500, exception.Message);
+            return NotFound(exception.Message);
         }
     } 
 }
