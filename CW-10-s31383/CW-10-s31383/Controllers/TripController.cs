@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 
 [ApiController]
 [Route("api/trips")]
-public class TripController(IDbService service) : ControllerBase
+public class TripController(ITripService service) : ControllerBase
 {
     [HttpGet]
     public ActionResult<Task> GetTrips(int page, int pageSize = 10)

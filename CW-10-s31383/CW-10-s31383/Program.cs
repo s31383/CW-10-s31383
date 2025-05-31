@@ -6,7 +6,8 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 builder.Services.AddOpenApi();
-builder.Services.AddScoped<IDbService, DbService>();
+builder.Services.AddScoped<ITripService, TripService>();
+builder.Services.AddScoped<IClientService, ClientService>();
 builder.Services.AddDbContext<AppDbContext>(
     opt => opt.UseSqlServer(builder.Configuration.GetConnectionString("Default"))
 );

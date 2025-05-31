@@ -2,7 +2,7 @@
 
 namespace CW_10_s31383.Services;
 
-public interface IDbService
+public interface ITripService
 {
     public Task<IEnumerable<TripGetDto>> GetSortedTripsAsync(int page, int pageSize = 10);
 }

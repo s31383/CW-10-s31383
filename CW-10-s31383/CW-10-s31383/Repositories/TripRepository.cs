@@ -1,10 +1,11 @@
-﻿using CW_10_s31383.Data;
+using System.Collections;
+using CW_10_s31383.Data;
 using CW_10_s31383.DTOs;
 using Microsoft.EntityFrameworkCore;
 
-namespace CW_10_s31383.Services;
+namespace CW_10_s31383.Repositories;
 
-public class DbService(AppDbContext dbContext) : IDbService
+public class TripRepository(AppDbContext dbContext) : ITripRepository
 {
     public async Task<IEnumerable<TripGetDto>> GetSortedTripsAsync(int page, int pageSize)
     {
