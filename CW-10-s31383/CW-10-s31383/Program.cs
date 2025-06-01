@@ -1,4 +1,5 @@
 using CW_10_s31383.Data;
+using CW_10_s31383.Repositories;
 using CW_10_s31383.Services;
 using Microsoft.EntityFrameworkCore;
 
@@ -6,6 +7,8 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 builder.Services.AddOpenApi();
+builder.Services.AddScoped<IClientRepository,ClientRepository>();
+builder.Services.AddScoped<ITripRepository,TripRepository>();
 builder.Services.AddScoped<ITripService, TripService>();
 builder.Services.AddScoped<IClientService, ClientService>();
 builder.Services.AddDbContext<AppDbContext>(
